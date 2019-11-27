@@ -1,4 +1,4 @@
-import * as dcmjs from "dcmjs";
+import * as dcmjs from "dcmjs/build/dcmjs.js";
 
 export default function arrayToDataset(PixelData, extent) {
   const { width, height, numFrames } = extent;

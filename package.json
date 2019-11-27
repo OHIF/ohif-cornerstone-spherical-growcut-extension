@@ -21,7 +21,8 @@
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --config .webpack/webpack.dev.js --watch --debug --output-pathinfo",
-    "build": "cross-env NODE_ENV=production webpack --config .webpack/webpack.prod.js",
+    "build": "rollup --config rollup.config.js",
+    "build:memory": "node --max-old-space-size=8192 node_modules/rollup/dist/bin/rollup --config rollup.config.js",
     "build:package": "yarn run build",
     "prepublishOnly": "yarn run build",
     "start": "yarn run dev"
@@ -38,5 +39,14 @@
   "dependencies": {
     "@babel/runtime": "^7.5.5",
     "ohif-step": "0.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "rollup": "^1.27.5",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.2"
   }
 }

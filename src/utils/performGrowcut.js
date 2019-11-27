@@ -1,5 +1,5 @@
 import { GrowCutGenerator, step, fields } from "ohif-step";
-import * as dcmjs from "dcmjs";
+import * as dcmjs from "dcmjs/build/dcmjs.js";
 
 const { helpers } = fields;
 const { fieldsFromDataset } = helpers;
